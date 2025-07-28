@@ -52,14 +52,15 @@ MODEL:
   LOOSE_SUP: True
   LOOSE_WEIGHT: 0.05
   WITH_MLM: False
-  TOKENIZER_CHECKPOINT_PATH: data/checkpoints/tokenizer.pth
+  # TOKENIZER_CHECKPOINT_PATH: data/checkpoints/tokenizer.pth
+  TOKENIZER_CHECKPOINT_PATH: "/home/max/nas_drive/methods/max/data/checkpoints/tokenhmr/tokenhmr_model_latest/data/checkpoints/tokenhmr_model_latest.ckpt"
 
   IMAGE_SIZE: 256
   IMAGE_MEAN: [0.485, 0.456, 0.406]
   IMAGE_STD: [0.229, 0.224, 0.225]
   BACKBONE:
     TYPE: vit
-    PRETRAINED_WEIGHTS: data/checkpoints/hmr2_pretrained.pth
+    PRETRAINED_WEIGHTS: "/home/max/nas_drive/methods/max/data/checkpoints/hmr2a_model/checkpoints/epoch=10-step=25000.ckpt"
     # PRETRAINED_WEIGHTS: tokenhmr/dataset_dir/vitpose_backbone.pth
   SMPL_HEAD:
     TYPE: token

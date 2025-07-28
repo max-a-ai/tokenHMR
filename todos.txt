@@ -1,0 +1,1 @@
+move /home/max/nas_drive/methods/max/data/body_models to config file

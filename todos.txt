@@ -1,1 +1,2 @@
 move /home/max/nas_drive/methods/max/data/body_models to config file
+check files dataset_tar.yaml and mix_all.yaml if we can get access to missing datsets, namely INSTA-TRAIN-WMASK and LSP-EXTENDED

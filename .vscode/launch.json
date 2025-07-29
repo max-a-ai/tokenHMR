@@ -23,6 +23,19 @@
             ],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "debugpy",
+            "request": "launch",
+            "name": "PoseVQ Training",
+            "python": "/home/max/Documents/2507-tokenhmr/.venv-tokenhmr/bin/python",
+            "program": "${workspaceFolder}/tokenization/train_poseVQ.py",
+            "args": [
+                "--cfg",
+                "configs/tokenizer_amass_moyo.yaml"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/tokenization"
         }
     ]
 }

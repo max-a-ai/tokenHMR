@@ -136,8 +136,7 @@ def eval_pose_vqvae(hparams, val_loader, net, logger, writer, nb_iter, out_dir, 
         for key, value in err_list.items():
             writer.add_scalar(f'{key}', err_list[key], nb_iter)
         for key, value in best_scores.items():
-            writer.add_scalar(f'{key}', err_list[key], nb_iter)
-
+            writer.add_scalar(f'{key}', value, nb_iter)
     net.eval()
 
     return best_scores

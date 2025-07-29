@@ -1,6 +1,7 @@
 # Specific
 /logs*/
 /results/
+/tokenization/output/
 /sandbox/
 *.lock
 *.pt

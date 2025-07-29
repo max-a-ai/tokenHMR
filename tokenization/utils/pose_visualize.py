@@ -10,7 +10,18 @@ from body_visualizer.mesh.mesh_viewer import MeshViewer
 from body_visualizer.mesh.sphere import points_to_spheres
 from body_visualizer.tools.vis_tools import show_image
 
-c2c = lambda tensor: tensor.detach().cpu().numpy()
+def c2c(tensor: 'torch.Tensor | np.ndarray') -> np.ndarray:
+    """Returns np.ndarray from a tensor or returns the np.ndarray.
+
+    Args:
+        tensor (torch.Tensor | np.ndarray): Input tensor or array.
+
+    Returns:
+        np.ndarray: Output np.ndarray.
+    """
+    if isinstance(tensor, np.ndarray):
+        return tensor
+    return tensor.detach().cpu().numpy()
 
 def overlay_text(image, txt_str, color=(0,0,255), str_id=1):
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -28,7 +39,7 @@ def overlay_text(image, txt_str, color=(0,0,255), str_id=1):
 
 def get_body_model(model_type, smpl_type='smplx'):
     from smplx import SMPLH, SMPLX
-    return eval(f'{smpl_type.upper()}')(f'../data/body_models/{smpl_type}', num_betas=10, ext='pkl').to('cuda')
+    return eval(f'{smpl_type.upper()}')(f'/home/max/nas_drive/methods/max/data/body_models/{smpl_type}', num_betas=10, ext='pkl').to('cuda')
 
 imw, imh = 500, 500
 

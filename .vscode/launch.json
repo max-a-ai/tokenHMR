@@ -19,7 +19,7 @@
             "program": "${workspaceFolder}/tokenhmr/train.py",
             "args": [
                 "datasets=mix_all",
-                "experiment=tokenhmr_release"
+                "experiment=tokenhmr_release",
             ],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"

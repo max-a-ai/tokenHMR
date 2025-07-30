@@ -105,7 +105,7 @@ class PoseReConsLoss(nn.Module):
     
     def calculate_vertex_weights(self):
         from smplx import SMPLH, SMPLX
-        body_model = eval(f'{self.smpl_type.upper()}')(f'/home/max/nas_drive/methods/max/data/body_models/{self.smpl_type}', num_betas=10, ext='pkl')
+        body_model = eval(f'{self.smpl_type.upper()}')(f'/hnvme/workspace/v103fe17-tokenhmr/data/body_models/{self.smpl_type}', num_betas=10, ext='pkl')
         mesh = body_model()
         vertices, faces = mesh.vertices[0].detach().numpy(), body_model.faces
         v1, v2, v3 = vertices[faces[:,0]], vertices[faces[:,1]], vertices[faces[:,2]]

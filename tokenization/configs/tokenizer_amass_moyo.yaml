@@ -12,7 +12,7 @@ EXP:
   RESUME_TRAINING: False
   LOG_TB: True
 DATA:
-  DATA_ROOT: 'tokenization_data'
+  DATA_ROOT: '/hnvme/workspace/v103fe17-tokenhmr/data/dataset'
   DATASET: 'amass_pose'
   TRAINLIST: 'CMU_KIT_BMLrub_DanceDB_BMLmovi_EyesJapan_BMLhandball_TotalCapture_EKUT_ACCAD_TCDHands_MPI-Limits_MOYO'
   TRAIN_PART: '0.12_0.11_0.11_0.05_0.05_0.05_0.05_0.05_0.03_0.03_0.03_0.16_0.16'

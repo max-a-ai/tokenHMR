@@ -78,8 +78,8 @@ class VQPoseDataset(data.Dataset):
         self.split = split
         self.smpl_type = smpl_type
 
-        self.smpl_model = eval(f'{smpl_type.upper()}')(f'/home/max/nas_drive/methods/max/data/body_models/{smpl_type}', num_betas=10, ext='pkl')
-        data = np.load(pjoin("/home/max/nas_drive/methods/max/dataset_tars/tokenization_data/smplh/train", f'{split}_{dt}.npz'))
+        self.smpl_model = eval(f'{smpl_type.upper()}')(f'/hnvme/workspace/v103fe17-tokenhmr/data/body_models/{smpl_type}', num_betas=10, ext='pkl')
+        data = np.load(pjoin("/hnvme/workspace/v103fe17-tokenhmr/data/dataset/tokenization_data/smplh/train", f'{split}_{dt}.npz'))
         total_samples = data['pose_body'].shape[0]
         
         random_idx = None
@@ -127,7 +127,7 @@ class ValDataset(data.Dataset):
         self.split = split
         self.smpl_type = smpl_type
 
-        self.smpl_model = eval(f'{smpl_type.upper()}')(f'/home/max/nas_drive/methods/max/data/body_models/{smpl_type}', num_betas=10, ext='pkl')
+        self.smpl_model = eval(f'{smpl_type.upper()}')(f'/hnvme/workspace/v103fe17-tokenhmr/data/body_models/{smpl_type}', num_betas=10, ext='pkl')
         
         self.pose_body = np.empty((0,63))
         self.betas = np.empty((0,10))
@@ -137,7 +137,7 @@ class ValDataset(data.Dataset):
 
         for dt in dataset_list:
             self.dataset_name += f'_{dt}'
-            data = np.load(pjoin("/home/max/nas_drive/methods/max/dataset_tars/tokenization_data/smplh/val", f'{split}_{dt}.npz'))
+            data = np.load(pjoin("/hnvme/workspace/v103fe17-tokenhmr/data/dataset/tokenization_data/smplh/val", f'{split}_{dt}.npz'))
             self.pose_body = np.append(self.pose_body, data['pose_body'], axis=0)
             self.betas = np.append(self.betas, data['betas'], axis=0)
             self.gender = np.append(self.gender, data['gender'], axis=0)

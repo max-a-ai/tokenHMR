@@ -15,7 +15,7 @@
             "type": "debugpy",
             "request": "launch",
             "name": "TokenHMR Training",
-            "python": "/home/max/Documents/2507-tokenhmr/.venv-tokenhmr/bin/python",
+            "python": "/hnvme/workspace/v103fe17-tokenhmr/conda/envs/tokenhmr/bin/python3",
             "program": "${workspaceFolder}/tokenhmr/train.py",
             "args": [
                 "datasets=mix_all",
@@ -28,11 +28,14 @@
             "type": "debugpy",
             "request": "launch",
             "name": "PoseVQ Training",
-            "python": "/home/max/Documents/2507-tokenhmr/.venv-tokenhmr/bin/python",
+            "python": "/hnvme/workspace/v103fe17-tokenhmr/conda/envs/tokenhmr/bin/python3",
             "program": "${workspaceFolder}/tokenization/train_poseVQ.py",
             "args": [
                 "--cfg",
-                "configs/tokenizer_amass_moyo.yaml"
+                "configs/tokenizer_amass_moyo.yaml",
+                "--set",
+                "DATA.DATA_ROOT",
+                "${env:TMPDIR}"
             ],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/tokenization"

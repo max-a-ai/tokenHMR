@@ -39,7 +39,7 @@ def overlay_text(image, txt_str, color=(0,0,255), str_id=1):
 
 def get_body_model(model_type, smpl_type='smplx'):
     from smplx import SMPLH, SMPLX
-    return eval(f'{smpl_type.upper()}')(f'/home/max/nas_drive/methods/max/data/body_models/{smpl_type}', num_betas=10, ext='pkl').to('cuda')
+    return eval(f'{smpl_type.upper()}')(f'/hnvme/workspace/v103fe17-tokenhmr/data/body_models/{smpl_type}', num_betas=10, ext='pkl').to('cuda')
 
 imw, imh = 500, 500
 
